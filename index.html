@@ -40,9 +40,9 @@
         let i = setInterval(function () {
           if (inp.value < 10) {
             inp.value++;
-            wi = wi += 50;
+            wid = wid += 50;
             diiv.style.width = wid + "px";
-          } else if (wi == 500) {
+          } else if (wid == 500) {
             diiv.innerText = "Done";
             clearInterval(i)
           }
