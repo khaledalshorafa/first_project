@@ -35,13 +35,13 @@
       let btn = document.getElementById("btn");
       let diiv = document.getElementById("child");
       let inp = document.querySelector("input");
-      let wi = 0;
+      let wid = 0;
       btn.onclick = function () {
         let i = setInterval(function () {
           if (inp.value < 10) {
             inp.value++;
             wi = wi += 50;
-            diiv.style.width = wi + "px";
+            diiv.style.width = wid + "px";
           } else if (wi == 500) {
             diiv.innerText = "Done";
             clearInterval(i)
