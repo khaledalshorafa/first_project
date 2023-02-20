@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+    <style>
+      #child {
+        background-color: blue;
+        height: 40px;
+        position: absolute;
+      }
+      button {
+        cursor: pointer;
+        padding: 7px;
+        border-radius: 14px;
+      }
+      #parant {
+        position: relative;
+        left: 15px;
+        width: 500px;
+        height: 40px;
+        background-color: rgb(24, 59, 90);
+        margin: 15px 15px;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" value="0" />
+    <button id="btn">on click</button>
+    <div id="parant"><div id="child"></div></div>
+
+    <script>
+      let btn = document.getElementById("btn");
+      let diiv = document.getElementById("child");
+      let inp = document.querySelector("input");
+      let wi = 0;
+      btn.onclick = function () {
+        let i = setInterval(function () {
+          if (inp.value < 10) {
+            inp.value++;
+            wi = wi += 50;
+            diiv.style.width = wi + "px";
+          } else if (wi == 500) {
+            diiv.innerText = "Done";
+            clearInterval(i)
+          }
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>
